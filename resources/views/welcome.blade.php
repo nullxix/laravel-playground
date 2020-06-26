@@ -1,11 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>...</title>
-</head>
-<body>
+@extends('layouts.main')
+
+@section('content')
     <center>it can</center>
-</body>
-</html>
+
+    <x-charli-box :iterations="10" class="alice" style="border: 2px solid black;" carl='7'>
+        <x-anon-box class="charlie sheen" >
+            @include('employee-month', ['name' => 'charlie'])
+            @includeWhen(true, 'employee-month', ['name' => 'not david'])
+        </x-anon-box>
+        <x-slot name='footer'>
+            content is up there
+        </x-slot>
+    </x-charli-box>
+@endsection
